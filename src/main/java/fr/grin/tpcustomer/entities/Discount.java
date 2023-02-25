@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package fr.grin.tpcustomer.entities;
 
 import java.io.Serializable;
@@ -37,7 +33,7 @@ public class Discount implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "RATE")
     private BigDecimal rate;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "discountCode")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "discount")
     private Collection<Customer> customerCollection;
 
     public Discount() {

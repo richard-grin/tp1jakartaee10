@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * Gère la peristance des Customers.
+ *
  * @author grin
  */
 @Stateless
@@ -28,5 +29,9 @@ public class CustomerManager {
 
     public Customer update(Customer customer) {
         return em.merge(customer);
+    }
+
+    public Customer findById(int idCustomer) {
+        return em.find(Customer.class, idCustomer);
     }
 }
